@@ -13,7 +13,7 @@
 // @match        *://*.edu.cn/antispiderShowVerify.ac*
 // @match        *://*.edu.cn/html/processVerify.ac?ucode*
 // @require      https://cdn.staticfile.org/jquery/1.7.2/jquery.min.js
-// @connect      52wfy.cn
+// @connect      damagou.top
 // @run-at       document-end
 // @grant        unsafeWindow
 // @grant        GM_xmlhttpRequest
@@ -143,7 +143,7 @@ function getCode(page, img) {
                 'Content-type': 'application/x-www-form-urlencoded'
             },
             timeout: setting.timeout,
-            data: 'image=' + encodeURIComponent(img) + '&userkey=' + setting.userkey,
+            data: 'image=' + encodeURIComponent(img) + '&userkey=' + setting.userkey+'isJson=2',
             onload: function(xhr) {
                 if (xhr.status != 200) return;
                 var obj = $.parseJSON(xhr.responseText);
